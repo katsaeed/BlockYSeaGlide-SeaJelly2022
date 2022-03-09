@@ -14,19 +14,22 @@ void setup() {
   pinMode(GREEN_LED, OUTPUT);
   pinMode(BLUE_LED, OUTPUT);
   pinMode(LED_BASE, OUTPUT);
+  ledRGB_Write(0,0,0);
+}
+
+void ledRGB_Write(byte R, byte G, byte B) {
+  analogWrite(RED_LED, 255 - R);
+  analogWrite(RED_LED, 255 - G);
+  analogWrite(RED_LED, 255 - B);
 }
 
 void LEDFlash() {
-  digitalWrite(LED_BASE, HIGH);
-  digitalWrite(BLUE_LED, HIGH);
-  delay(1000);
-  digitalWrite(BLUE_LED, LOW);
-  digitalWrite(GREEN_LED, HIGH);
-  delay(1000);
-  digitalWrite(GREEN_LED, LOW);
-  digitalWrite(RED_LED, HIGH);
-  delay(1000);
-  digitalWrite(RED_LED, LOW);
+  ledRGB_Write(255, 0, 0);
+  delay(300);
+  ledRGB_Write(0, 255, 0);
+  delay(300);
+  ledRGB_Write(0, 0, 255);
+  delay(300);
 }
 
 void loop() {                                                                                   
