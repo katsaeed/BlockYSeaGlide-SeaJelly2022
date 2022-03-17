@@ -20,7 +20,7 @@ static int maxCoast = 20000;         // if the pot is turned all the way to the 
 static byte servoDiveCommand = 0;    // this is the angle value that the dive method sends to the servo
 static byte servoRiseCommand = 180;  // this is the angle value that the rise method sends to the servo
 
-static int riseDriveTime = 12000;       // This variable determines the distance the plunger travels when pushing water out of the BE
+static int riseDriveTime = 16000;       // This variable determines the distance the plunger travels when pushing water out of the BE
                                         // Make adjustments only with a fully charged battery. The plunger should travel to the end of the syringe
 static int pausedBlinkInterval = 1500;  // the pause time between short blinks when the buoyancy engine is paused 
 
